@@ -1,4 +1,4 @@
-package kr.developer.co.b24;
+package kr.developer.co.b24.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +10,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import kr.developer.co.b24.activity.AdviceListActivity;
-import kr.developer.co.b24.activity.MainActivity;
+import kr.developer.co.b24.R;
 
 public class SignUpActivity extends AppCompatActivity {
     Spinner mSpinnerAge;
