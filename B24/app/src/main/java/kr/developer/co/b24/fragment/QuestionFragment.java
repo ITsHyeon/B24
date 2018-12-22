@@ -20,17 +20,20 @@ import kr.developer.co.b24.model.Advice;
 public class QuestionFragment extends Fragment {
 
     String question;
+    int position;
+    int length;
 
-    public QuestionFragment(String question) {
+    public QuestionFragment(String question, int position, int length) {
         this.question = question;
+        this.position = position;
+        this.length = length;
     }
 
-    public static QuestionFragment create(String question) {
-        QuestionFragment fragment = new QuestionFragment(question);
+    public static QuestionFragment create(String question,int position,int length) {
+        QuestionFragment fragment = new QuestionFragment(question,position,length);
         Bundle args = new Bundle();
 
         fragment.setArguments(args);
-
 
         return fragment;
     }
@@ -47,8 +50,10 @@ public class QuestionFragment extends Fragment {
         ViewGroup view = (ViewGroup) inflater.inflate(R.layout.item_question, container, false);
 
         TextView questionContentTextView = view.findViewById(R.id.tv_question_content);
+        TextView questionPageCountTextView = view.findViewById(R.id.tv_page_counter);
 
         questionContentTextView.setText(question);
+        questionPageCountTextView.setText((position+1)+"/"+length);
 
         return view;
     }

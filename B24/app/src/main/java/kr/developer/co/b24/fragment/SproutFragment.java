@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 import kr.developer.co.b24.R;
 import kr.developer.co.b24.adapter.AdvicePagerAdapter;
-import kr.developer.co.b24.adapter.QuestionPagerAdpater;
+import kr.developer.co.b24.adapter.QuestionPagerAdapter;
 import kr.developer.co.b24.model.Advice;
 import kr.developer.co.b24.model.Member;
 
@@ -45,8 +45,8 @@ public class SproutFragment extends Fragment {
     final ViewPager questionViewPager = view.findViewById(R.id.question_view_pager);
     final ViewPager adviceViewPager = view.findViewById(R.id.advice_view_pager);
 
-    QuestionPagerAdpater questionPagerAdpater =
-        new QuestionPagerAdpater(
+    QuestionPagerAdapter questionPagerAdpater =
+        new QuestionPagerAdapter(
             getActivity().getSupportFragmentManager(),
             Arrays.asList(getResources().getStringArray(R.array.question_list)));
 
