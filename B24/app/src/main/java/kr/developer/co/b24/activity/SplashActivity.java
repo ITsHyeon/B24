@@ -1,8 +1,11 @@
-package kr.developer.co.b24;
+package kr.developer.co.b24.activity;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import kr.developer.co.b24.R;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -11,15 +14,13 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        runOnUiThread(()->{
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            Intent intent = new Intent(SplashActivity.this, SignUpActivity.class);
-
+        Handler handler = new Handler();
+        handler.postDelayed(() -> {
+            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
             startActivity(intent);
-        });
+            finish();
+        },2000);
+
+
     }
 }
