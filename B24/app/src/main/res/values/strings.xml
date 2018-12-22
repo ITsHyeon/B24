@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">B24</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="question_title">나무가 새싹이었을 때</string>
+    <string name="question_title_2">살이 였을 때</string>
+    <string name="question_1">\"내가 했었어야 했던일\"</string>
+    <string name="question_2">\"너가 했으면 좋을꺼 같은 일\"</string>
+    <string name="question_3">\"너가 하지 말았으면 하는 일 \"</string>
+    <string name="text_count">개</string>
 </resources>
