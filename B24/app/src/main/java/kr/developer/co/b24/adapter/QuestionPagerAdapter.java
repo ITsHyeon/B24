@@ -22,7 +22,7 @@ public class QuestionPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return QuestionFragment.create(questionList.get(position));
+        return QuestionFragment.create(questionList.get(position),position,questionList.size());
     }
 
     @Override
