@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="17dp"
-        android:text="과거의 나를 만나다"
+        android:text="과거의 너를 만나다"
         android:textColor="#47e585"
         android:textSize="16sp"
         android:letterSpacing="0.2"
@@ -29,13 +29,23 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/splashWave"
-        android:layout_width="match_parent"
-        android:layout_height="128dp"
-        android:layout_marginTop="150dp"
-        android:background="@drawable/splash_wave"
+    <me.itangqi.waveloadingview.WaveLoadingView
+        android:id="@+id/waveLoadingView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/splashTitle"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:wlv_borderColor="#ffffffff"
+        app:wlv_borderWidth="3dp"
+        app:wlv_round_rectangle="true"
+        app:wlv_shapeType="square"
+        app:wlv_triangle_direction="north"
+        app:wlv_waveAmplitude="50"
+        app:wlv_waveColor="@color/colorPrimary"/>
 
 </android.support.constraint.ConstraintLayout>

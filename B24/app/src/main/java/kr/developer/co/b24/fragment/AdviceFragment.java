@@ -18,6 +18,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import kr.developer.co.b24.R;
+import kr.developer.co.b24.database.DatabaseHelper;
 import kr.developer.co.b24.model.Advice;
 
 @SuppressLint("ValidFragment")
@@ -51,6 +52,8 @@ public class AdviceFragment extends Fragment {
       LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     ViewGroup view = (ViewGroup) inflater.inflate(R.layout.item_advice, container, false);
 
+    DatabaseHelper databaseHelper = DatabaseHelper.getDatabaseHelper(getContext());
+
     TextView memberAgeTextView = view.findViewById(R.id.tv_member);
     TextView adviceCommentTextView = view.findViewById(R.id.tv_advice_comment);
     TextView adviceLikeCountTextView = view.findViewById(R.id.tv_advice_like_count);
@@ -69,6 +72,8 @@ public class AdviceFragment extends Fragment {
       }
       adviceLikeCountTextView.setText(
               Integer.toString(advice.getLikeCount()) + getString(R.string.text_count));
+
+      databaseHelper.insertAdviceData(advice);
     });
 
     return view;

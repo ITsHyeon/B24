@@ -2,6 +2,7 @@ package kr.developer.co.b24.model;
 
 
 public class Advice {
+    int idx;
     Member member;
     String comment;
     int likeCount;
@@ -11,12 +12,21 @@ public class Advice {
     public Advice() {
     }
 
-    public Advice(Member member, String comment, int likeCount, int age, int category) {
+    public Advice(int idx, Member member, String comment, int likeCount, int age, int category) {
+        this.idx = idx;
         this.member = member;
         this.comment = comment;
         this.likeCount = likeCount;
         this.age = age;
         this.category = category;
+    }
+
+    public int getIdx() {
+        return this.idx;
+    }
+
+    public void setIdx(int idx) {
+        this.idx = idx;
     }
 
     public Member getMember() {
@@ -58,4 +68,5 @@ public class Advice {
     public void setCategory(int category) {
         this.category = category;
     }
+
 }

@@ -1,117 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryLight"
-    tools:context=".fragment.TreeFragment">
+    tools:context=".fragment.TreeFragment"
+    android:orientation="vertical">
 
-    <android.support.constraint.ConstraintLayout
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="218dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_round_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/constraintLayout"
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_question_title"
             android:layout_width="match_parent"
-            android:layout_height="218dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="17dp"
-            android:background="@drawable/bg_round_shadow"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
 
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/cl_question_title"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="0dp">
+                android:layout_marginEnd="0dp"
+                android:text="내가"
+                app:layout_constraintBottom_toBottomOf="@+id/age_spinner"
+                app:layout_constraintEnd_toStartOf="@+id/age_spinner"
+                app:layout_constraintTop_toTopOf="@+id/age_spinner" />
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="0dp"
-                    android:text="내가"
-                    app:layout_constraintBottom_toBottomOf="@+id/age_spinner"
-                    app:layout_constraintEnd_toStartOf="@+id/age_spinner"
-                    app:layout_constraintTop_toTopOf="@+id/age_spinner" />
-
-                <Spinner
-                    android:id="@+id/age_spinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="0dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginTop="0dp"
-                    android:entries="@array/age"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <TextView
-                    android:id="@+id/tv_question_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="0dp"
-                    android:text="@string/question_title_2"
-                    app:layout_constraintBottom_toBottomOf="@+id/age_spinner"
-                    app:layout_constraintStart_toEndOf="@+id/age_spinner"
-                    app:layout_constraintTop_toTopOf="@+id/age_spinner" />
-            </android.support.constraint.ConstraintLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginEnd="17dp"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="10dp"
-                android:background="#cccccc"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cl_question_title"
-                tools:ignore="Orientation" />
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/question_view_pager_tree"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginStart="8dp"
+            <Spinner
+                android:id="@+id/age_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="0dp"
+                android:entries="@array/age"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+                app:layout_constraintTop_toTopOf="parent" />
 
+
+            <TextView
+                android:id="@+id/tv_question_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:text="@string/question_title_2"
+                app:layout_constraintBottom_toBottomOf="@+id/age_spinner"
+                app:layout_constraintStart_toEndOf="@+id/age_spinner"
+                app:layout_constraintTop_toTopOf="@+id/age_spinner" />
         </android.support.constraint.ConstraintLayout>
 
-        <kr.developer.co.b24.custom.LinedEditText
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginEnd="8dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="17dp"
+            android:background="#cccccc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_question_title"
+            tools:ignore="Orientation" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/question_view_pager_tree"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
-            android:lineSpacingExtra="25dp"
-            android:padding="4dp"
-            android:layout_marginTop="17dp"
-            android:background="@drawable/bg_round_shadow"
-            android:gravity="top|left"
-            android:imeOptions="actionNone"
-            android:inputType="textMultiLine|textNoSuggestions"
-            android:minLines="4"
-            android:singleLine="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
     </android.support.constraint.ConstraintLayout>
 
-</FrameLayout>
+    <kr.developer.co.b24.custom.LinedEditText
+        android:id="@+id/linedEditText"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/bg_round_shadow"
+        android:gravity="top|left"
+        android:imeOptions="actionNone"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:lineSpacingExtra="25dp"
+        android:minLines="4"
+        android:padding="4dp"
+        android:singleLine="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <Button
+        android:id="@+id/btn_advice_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="조언하기"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff"/>
+
+
+</LinearLayout>
