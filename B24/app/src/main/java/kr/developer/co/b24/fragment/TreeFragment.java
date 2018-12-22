@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import java.util.Arrays;
 
 import kr.developer.co.b24.R;
-import kr.developer.co.b24.adapter.QuestionPagerAdpater;
+import kr.developer.co.b24.adapter.QuestionPagerAdapter;
 
 public class TreeFragment extends Fragment {
 
@@ -21,14 +21,14 @@ public class TreeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup view = (ViewGroup) inflater.inflate(R.layout.fragment_tree, container, false);
 
-        final ViewPager questionViewPager = view.findViewById(R.id.question_view_pager);
+        final ViewPager questionViewPager = view.findViewById(R.id.question_view_pager_tree);
 
-        QuestionPagerAdpater questionPagerAdpater =
-                new QuestionPagerAdpater(
+        QuestionPagerAdapter questionPagerAdapter =
+                new QuestionPagerAdapter(
                         getActivity().getSupportFragmentManager(),
                         Arrays.asList(getResources().getStringArray(R.array.question_list)));
 
-        questionViewPager.setAdapter(questionPagerAdpater);
+        questionViewPager.setAdapter(questionPagerAdapter);
 
         return view;
     }
