@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.TreeFragment"
-    android:background="@color/colorPrimaryLight">
+    android:background="@color/colorPrimaryLight"
+    tools:context=".fragment.TreeFragment">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -28,9 +28,9 @@
                 android:id="@+id/cl_question_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="0dp"
-                tools:ignore="MissingConstraints">
+                tools:layout_editor_absoluteY="0dp">
 
                 <TextView
                     android:id="@+id/textView"
